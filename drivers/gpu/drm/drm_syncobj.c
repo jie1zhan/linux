@@ -887,7 +887,7 @@ static int drm_syncobj_flatten_chain(struct dma_fence **f)
 		goto free_fences;
 
 	dma_fence_put(*f);
-	*f = &array->base;
+	*f = array->fences[0];
 	return 0;
 
 free_fences:
